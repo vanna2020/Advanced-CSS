@@ -1,0 +1,115 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.loader {
+  border: 8px solid #d5d0d0;
+  border-top: 8px solid #3498db; /* Blue part that will rotate */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite; /* Continuous rotation */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  } /* Starts at 0 degrees */
+  to {
+    transform: rotate(360deg);
+  } /* Ends at 360 degrees, full circle */
+}
+
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 800px; /* Perspective for depth */
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 6s infinite linear;
+}
+
+@keyframes rotateCube {
+  from {
+    transform: rotateX(0deg) rotateY(0deg); /* Start at no rotation */
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg); /* Full 360 degree rotation on both axes */
+  }
+}
+
+.cube div {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 100, 255, 0.8);
+  border: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.front {
+  transform: translateZ(100px);
+}
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+}
+.right {
+  transform: rotateY(90deg) translateZ(100px);
+}
+.left {
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.top {
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+:root {
+  --primaryColor: #00b7ff;
+  --secondaryColor: #6c757d;
+}
+
+#primaryBtn {
+  background-color: var(--primaryColor);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#secondaryBtn {
+  background-color: var(--secondaryColor);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#primaryBtn:hover,
+#secondaryBtn:hover {
+  opacity: 0.8;
+}
+
+.btn-container {
+  display: flex;
+  gap: 4px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS var() Function Example</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Task 1 => Explain the purpose of using the var() function in css. Also you
+    have created two buttons with id named primaryBtn and secondaryBtn which
+    should be given background colors using the var() function. The color code
+    for primaryColor is #00b7ff and secondaryColor is #6c757d. -->
+
+    <!-- Ans => The var() function in CSS is used to insert the value of a custom property
+    (CSS variable) that you have defined. This makes your styles more reusable
+    and easier to maintain because you can define values like colors, spacing,
+    or fonts in one place and then use them throughout your stylesheet.
+
+    Purpose of var() function:
+
+    Reusability: You define a value once and use it across multiple elements.
+    Maintainability: You can change the value in one place, and all the elements that reference it will automatically update.
+    Fallbacks: You can specify a fallback value if the custom property is not defined.
+
+    Example for your buttons:
+    You can define the custom properties --primaryColor and --secondaryColor and then use them for the buttons: -->
+    <div class="btn-container">
+      <button id="primaryBtn">Primary Button</button>
+      <button id="secondaryBtn">Secondary Button</button>
+    </div>
+  </body>
+</html>
